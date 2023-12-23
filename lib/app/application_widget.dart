@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:go_router/go_router.dart';
+import 'package:pestov_test/data/data.dart';
 
 import 'package:pestov_test/features/features.dart';
 import 'app.dart';
@@ -10,6 +11,8 @@ class ApplicationWidget extends StatelessWidget {
   ApplicationWidget({super.key});
 
   late final GoRouter _router = _buildRouting();
+
+  final TestRepository _testRepository = TestRepository(AssetsDataSource());
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +36,9 @@ class ApplicationWidget extends StatelessWidget {
         name: AppRoutInfo.testScreen.name,
         builder: (context, state) {
           return BlocProvider<TestBloc>(
-            create: (BuildContext context) => TestBloc(),
+            create: (BuildContext context) => TestBloc(
+              _testRepository,
+            ),
             child: const TestScreen(),
           );
         },
