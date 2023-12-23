@@ -2,13 +2,12 @@
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'test_model.freezed.dart';
-
+part 'test_answer_model.freezed.dart';
 
 @freezed
-class TestModel with _$TestModel {
-  const factory TestModel({
+class TestAnswerModel with _$TestAnswerModel {
+  const factory TestAnswerModel({
     int? question,
     int? answer,
-  }) = _TestModel;
+  }) = _TestAnswerModel;
 }
