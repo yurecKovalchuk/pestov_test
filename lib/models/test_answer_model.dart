@@ -9,5 +9,6 @@ class TestAnswerModel with _$TestAnswerModel {
   const factory TestAnswerModel({
     int? question,
     int? answer,
+    bool? isCorrect,
   }) = _TestAnswerModel;
 }

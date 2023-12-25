@@ -18,6 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$TestAnswerModel {
   int? get question => throw _privateConstructorUsedError;
   int? get answer => throw _privateConstructorUsedError;
+  bool? get isCorrect => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $TestAnswerModelCopyWith<TestAnswerModel> get copyWith =>
@@ -30,7 +31,7 @@ abstract class $TestAnswerModelCopyWith<$Res> {
           TestAnswerModel value, $Res Function(TestAnswerModel) then) =
       _$TestAnswerModelCopyWithImpl<$Res, TestAnswerModel>;
   @useResult
-  $Res call({int? question, int? answer});
+  $Res call({int? question, int? answer, bool? isCorrect});
 }
 
 /// @nodoc
@@ -48,6 +49,7 @@ class _$TestAnswerModelCopyWithImpl<$Res, $Val extends TestAnswerModel>
   $Res call({
     Object? question = freezed,
     Object? answer = freezed,
+    Object? isCorrect = freezed,
   }) {
     return _then(_value.copyWith(
       question: freezed == question
@@ -58,6 +60,10 @@ class _$TestAnswerModelCopyWithImpl<$Res, $Val extends TestAnswerModel>
           ? _value.answer
           : answer // ignore: cast_nullable_to_non_nullable
               as int?,
+      isCorrect: freezed == isCorrect
+          ? _value.isCorrect
+          : isCorrect // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ) as $Val);
   }
 }
@@ -70,7 +76,7 @@ abstract class _$$TestAnswerModelImplCopyWith<$Res>
       __$$TestAnswerModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int? question, int? answer});
+  $Res call({int? question, int? answer, bool? isCorrect});
 }
 
 /// @nodoc
@@ -86,6 +92,7 @@ class __$$TestAnswerModelImplCopyWithImpl<$Res>
   $Res call({
     Object? question = freezed,
     Object? answer = freezed,
+    Object? isCorrect = freezed,
   }) {
     return _then(_$TestAnswerModelImpl(
       question: freezed == question
@@ -96,6 +103,10 @@ class __$$TestAnswerModelImplCopyWithImpl<$Res>
           ? _value.answer
           : answer // ignore: cast_nullable_to_non_nullable
               as int?,
+      isCorrect: freezed == isCorrect
+          ? _value.isCorrect
+          : isCorrect // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -103,16 +114,18 @@ class __$$TestAnswerModelImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$TestAnswerModelImpl implements _TestAnswerModel {
-  const _$TestAnswerModelImpl({this.question, this.answer});
+  const _$TestAnswerModelImpl({this.question, this.answer, this.isCorrect});
 
   @override
   final int? question;
   @override
   final int? answer;
+  @override
+  final bool? isCorrect;
 
   @override
   String toString() {
-    return 'TestAnswerModel(question: $question, answer: $answer)';
+    return 'TestAnswerModel(question: $question, answer: $answer, isCorrect: $isCorrect)';
   }
 
   @override
@@ -122,11 +135,13 @@ class _$TestAnswerModelImpl implements _TestAnswerModel {
             other is _$TestAnswerModelImpl &&
             (identical(other.question, question) ||
                 other.question == question) &&
-            (identical(other.answer, answer) || other.answer == answer));
+            (identical(other.answer, answer) || other.answer == answer) &&
+            (identical(other.isCorrect, isCorrect) ||
+                other.isCorrect == isCorrect));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, question, answer);
+  int get hashCode => Object.hash(runtimeType, question, answer, isCorrect);
 
   @JsonKey(ignore: true)
   @override
@@ -137,13 +152,17 @@ class _$TestAnswerModelImpl implements _TestAnswerModel {
 }
 
 abstract class _TestAnswerModel implements TestAnswerModel {
-  const factory _TestAnswerModel({final int? question, final int? answer}) =
-      _$TestAnswerModelImpl;
+  const factory _TestAnswerModel(
+      {final int? question,
+      final int? answer,
+      final bool? isCorrect}) = _$TestAnswerModelImpl;
 
   @override
   int? get question;
   @override
   int? get answer;
+  @override
+  bool? get isCorrect;
   @override
   @JsonKey(ignore: true)
   _$$TestAnswerModelImplCopyWith<_$TestAnswerModelImpl> get copyWith =>

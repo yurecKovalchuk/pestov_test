@@ -19,6 +19,8 @@ mixin _$TestState {
   List<TestQuestionDTO>? get questions => throw _privateConstructorUsedError;
   List<TestAnswerModel>? get answers => throw _privateConstructorUsedError;
   int get currentQuestionIndex => throw _privateConstructorUsedError;
+  int? get correctAnswersCount => throw _privateConstructorUsedError;
+  bool get isEndTest => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $TestStateCopyWith<TestState> get copyWith =>
@@ -33,7 +35,9 @@ abstract class $TestStateCopyWith<$Res> {
   $Res call(
       {List<TestQuestionDTO>? questions,
       List<TestAnswerModel>? answers,
-      int currentQuestionIndex});
+      int currentQuestionIndex,
+      int? correctAnswersCount,
+      bool isEndTest});
 }
 
 /// @nodoc
@@ -52,6 +56,8 @@ class _$TestStateCopyWithImpl<$Res, $Val extends TestState>
     Object? questions = freezed,
     Object? answers = freezed,
     Object? currentQuestionIndex = null,
+    Object? correctAnswersCount = freezed,
+    Object? isEndTest = null,
   }) {
     return _then(_value.copyWith(
       questions: freezed == questions
@@ -66,6 +72,14 @@ class _$TestStateCopyWithImpl<$Res, $Val extends TestState>
           ? _value.currentQuestionIndex
           : currentQuestionIndex // ignore: cast_nullable_to_non_nullable
               as int,
+      correctAnswersCount: freezed == correctAnswersCount
+          ? _value.correctAnswersCount
+          : correctAnswersCount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      isEndTest: null == isEndTest
+          ? _value.isEndTest
+          : isEndTest // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -81,7 +95,9 @@ abstract class _$$TestStateImplCopyWith<$Res>
   $Res call(
       {List<TestQuestionDTO>? questions,
       List<TestAnswerModel>? answers,
-      int currentQuestionIndex});
+      int currentQuestionIndex,
+      int? correctAnswersCount,
+      bool isEndTest});
 }
 
 /// @nodoc
@@ -98,6 +114,8 @@ class __$$TestStateImplCopyWithImpl<$Res>
     Object? questions = freezed,
     Object? answers = freezed,
     Object? currentQuestionIndex = null,
+    Object? correctAnswersCount = freezed,
+    Object? isEndTest = null,
   }) {
     return _then(_$TestStateImpl(
       questions: freezed == questions
@@ -112,6 +130,14 @@ class __$$TestStateImplCopyWithImpl<$Res>
           ? _value.currentQuestionIndex
           : currentQuestionIndex // ignore: cast_nullable_to_non_nullable
               as int,
+      correctAnswersCount: freezed == correctAnswersCount
+          ? _value.correctAnswersCount
+          : correctAnswersCount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      isEndTest: null == isEndTest
+          ? _value.isEndTest
+          : isEndTest // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -122,7 +148,9 @@ class _$TestStateImpl implements _TestState {
   const _$TestStateImpl(
       {final List<TestQuestionDTO>? questions,
       final List<TestAnswerModel>? answers,
-      required this.currentQuestionIndex})
+      required this.currentQuestionIndex,
+      this.correctAnswersCount,
+      required this.isEndTest})
       : _questions = questions,
         _answers = answers;
 
@@ -148,10 +176,14 @@ class _$TestStateImpl implements _TestState {
 
   @override
   final int currentQuestionIndex;
+  @override
+  final int? correctAnswersCount;
+  @override
+  final bool isEndTest;
 
   @override
   String toString() {
-    return 'TestState(questions: $questions, answers: $answers, currentQuestionIndex: $currentQuestionIndex)';
+    return 'TestState(questions: $questions, answers: $answers, currentQuestionIndex: $currentQuestionIndex, correctAnswersCount: $correctAnswersCount, isEndTest: $isEndTest)';
   }
 
   @override
@@ -163,7 +195,11 @@ class _$TestStateImpl implements _TestState {
                 .equals(other._questions, _questions) &&
             const DeepCollectionEquality().equals(other._answers, _answers) &&
             (identical(other.currentQuestionIndex, currentQuestionIndex) ||
-                other.currentQuestionIndex == currentQuestionIndex));
+                other.currentQuestionIndex == currentQuestionIndex) &&
+            (identical(other.correctAnswersCount, correctAnswersCount) ||
+                other.correctAnswersCount == correctAnswersCount) &&
+            (identical(other.isEndTest, isEndTest) ||
+                other.isEndTest == isEndTest));
   }
 
   @override
@@ -171,7 +207,9 @@ class _$TestStateImpl implements _TestState {
       runtimeType,
       const DeepCollectionEquality().hash(_questions),
       const DeepCollectionEquality().hash(_answers),
-      currentQuestionIndex);
+      currentQuestionIndex,
+      correctAnswersCount,
+      isEndTest);
 
   @JsonKey(ignore: true)
   @override
@@ -184,7 +222,9 @@ abstract class _TestState implements TestState {
   const factory _TestState(
       {final List<TestQuestionDTO>? questions,
       final List<TestAnswerModel>? answers,
-      required final int currentQuestionIndex}) = _$TestStateImpl;
+      required final int currentQuestionIndex,
+      final int? correctAnswersCount,
+      required final bool isEndTest}) = _$TestStateImpl;
 
   @override
   List<TestQuestionDTO>? get questions;
@@ -192,6 +232,10 @@ abstract class _TestState implements TestState {
   List<TestAnswerModel>? get answers;
   @override
   int get currentQuestionIndex;
+  @override
+  int? get correctAnswersCount;
+  @override
+  bool get isEndTest;
   @override
   @JsonKey(ignore: true)
   _$$TestStateImplCopyWith<_$TestStateImpl> get copyWith =>

@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'package:go_router/go_router.dart';
+
+import 'package:pestov_test/app/app.dart';
 import '../bloc/test_bloc.dart';
 
 class TestScreen extends StatefulWidget {
@@ -34,7 +38,9 @@ class _TestScreenState extends State<TestScreen> {
                     children: [
                       Text(
                         state.questions![state.currentQuestionIndex].question,
-                        style: const TextStyle(fontSize: 18.0),
+                        style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                              fontWeight: FontWeight.w600,
+                            ),
                         textAlign: TextAlign.center,
                       ),
                       const SizedBox(
@@ -47,37 +53,49 @@ class _TestScreenState extends State<TestScreen> {
                           final answerIndex = index + 1;
                           return Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: InkWell(
-                              onTap: () {
-                                _bloc.selectAnswer(answerIndex);
-                              },
-                              child: Container(
-                                width: double.infinity,
-                                padding: const EdgeInsets.all(12),
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(16),
-                                  border: Border.all(color: Colors.black),
-                                ),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      state.questions![state.currentQuestionIndex].answers[answerIndex - 1]['text'],
-                                      style: const TextStyle(fontSize: 18.0),
-                                    ),
-                                  ],
+                            child: ElevatedButton(
+                              onPressed: () => _bloc.selectAnswer(answerIndex),
+                              style: ElevatedButton.styleFrom(
+                                minimumSize: const Size.fromHeight(62.0),
+                              ),
+                              child: Flexible(
+                                child: Text(
+                                  state.questions![state.currentQuestionIndex].answers[index]['text'],
+                                  style: const TextStyle(
+                                    fontSize: 16.0,
+                                    color: Colors.white,
+                                  ), textAlign: TextAlign.center,
+                                  softWrap: true,
                                 ),
                               ),
                             ),
                           );
                         },
                       ),
+                      const SizedBox(
+                        height: 80,
+                      ),
+                      Text('${(state.currentQuestionIndex + 1).toString()}/${state.questions!.length}'),
                     ],
                   ),
                 );
         },
-        listener: (context, state) {},
+        listener: (context, state) {
+          if (state.isEndTest == true) {
+            _pushToOverviewResultScreen(state.correctAnswersCount!, state.questions!.length);
+          }
+        },
       ),
+    );
+  }
+
+  void _pushToOverviewResultScreen(int correctAnswers, int numberOfQuestions) {
+    GoRouter.of(context).goNamed(
+      AppRoutInfo.overviewResultScreen.name,
+      queryParameters: {
+        "correctAnswers": correctAnswers.toString(),
+        "numberOfQuestions": numberOfQuestions.toString(),
+      },
     );
   }
 }

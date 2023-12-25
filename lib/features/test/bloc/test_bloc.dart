@@ -13,6 +13,9 @@ class TestBloc extends Cubit<TestState> {
   TestBloc(this._testRepository)
       : super(const TestState(
           currentQuestionIndex: 0,
+          answers: [],
+          correctAnswersCount: 0,
+          isEndTest: false,
         ));
 
   final TestRepository _testRepository;
@@ -22,7 +25,24 @@ class TestBloc extends Cubit<TestState> {
     emit(state.copyWith(questions: result));
   }
 
+  void saveAnswers(int questionIndex, int answerIndex) {
+    final updatedAnswers = List<TestAnswerModel>.from(state.answers as Iterable);
+    updatedAnswers.add(TestAnswerModel(
+      question: questionIndex + 1,
+      answer: answerIndex,
+    ));
+
+    final currentQuestion = state.questions![questionIndex];
+    final isCorrect = answerIndex == currentQuestion.correctAnswerPosition;
+
+    emit(state.copyWith(
+      answers: updatedAnswers,
+      correctAnswersCount: state.correctAnswersCount! + (isCorrect ? 1 : 0),
+    ));
+  }
+
   void selectAnswer(int answerIndex) {
+    saveAnswers(state.currentQuestionIndex, answerIndex);
     moveToNextQuestion();
   }
 
@@ -32,6 +52,11 @@ class TestBloc extends Cubit<TestState> {
 
   void updateCurrentQuestionIndex() {
     final updateQuestionIndex = state.currentQuestionIndex + 1;
-    emit(state.copyWith(currentQuestionIndex: updateQuestionIndex));
+
+    if (updateQuestionIndex >= state.questions!.length) {
+      emit(state.copyWith(isEndTest: true));
+    } else {
+      emit(state.copyWith(currentQuestionIndex: updateQuestionIndex));
+    }
   }
 }
