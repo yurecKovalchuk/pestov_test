@@ -10,18 +10,18 @@ import 'package:logging/logging.dart';
 import 'di/injection.dart';
 
 Future<void> bootstrap(FutureOr<Widget> Function(GetIt getIt) builder) async =>
-    runZonedGuarded(() async => _initialize(kDebugMode, builder), _handleError);
+    runZonedGuarded(() async => _initialize(builder), _handleError);
 
-void _initialize(bool isDebugMode, FutureOr<Widget> Function(GetIt getIt) builder) async {
-  _initLogger(isDebugMode);
+void _initialize(FutureOr<Widget> Function(GetIt getIt) builder) async {
+  _initLogger();
   final serviceLocator = await configureDependencies();
   return runApp(await builder(serviceLocator));
 }
 
-void _initLogger(bool isDebugMode) {
-  Logger.root.level = isDebugMode ? Level.ALL : Level.INFO;
+void _initLogger() {
+  Logger.root.level = kDebugMode ? Level.ALL : Level.INFO;
   Logger.root.onRecord.listen((record) {
-    if (isDebugMode) {
+    if (kDebugMode) {
       print('${record.level.name}: ${record.time}: ${record.message}');
     }
   });
