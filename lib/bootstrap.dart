@@ -3,14 +3,19 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 
+import 'package:get_it/get_it.dart';
+
 import 'package:logging/logging.dart';
 
-Future<void> bootstrap(FutureOr<Widget> Function() builder) async =>
+import 'di/injection.dart';
+
+Future<void> bootstrap(FutureOr<Widget> Function(GetIt getIt) builder) async =>
     runZonedGuarded(() async => _initialize(kDebugMode, builder), _handleError);
 
-void _initialize(bool isDebugMode, FutureOr<Widget> Function() builder) async {
+void _initialize(bool isDebugMode, FutureOr<Widget> Function(GetIt getIt) builder) async {
   _initLogger(isDebugMode);
-  return runApp(await builder());
+  final serviceLocator = await configureDependencies();
+  return runApp(await builder(serviceLocator));
 }
 
 void _initLogger(bool isDebugMode) {
