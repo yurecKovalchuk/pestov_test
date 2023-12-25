@@ -12,8 +12,8 @@ class TestRepositoryImpl implements TestRepository {
   final AssetsDataSource _assetsDataSource;
 
   @override
-  Future<List<TestQuestionModel>> loadQuestions() async {
-    final result = await _assetsDataSource.loadQuestions();
+  Future<List<TestQuestionModel>> loadQuestions(String languageCode) async {
+    final result = await _assetsDataSource.loadQuestions(languageCode);
     return result
         .map((e) => TestQuestionModel(
               question: e.question,

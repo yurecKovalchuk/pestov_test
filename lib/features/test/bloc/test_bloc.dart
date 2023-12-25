@@ -9,7 +9,7 @@ part 'test_state.dart';
 part 'test_bloc.freezed.dart';
 
 class TestBloc extends Cubit<TestState> {
-  TestBloc(this._testRepository)
+  TestBloc(this._testRepository, this._languageCode)
       : super(const TestState(
           currentQuestionIndex: 0,
           isEndTest: false,
@@ -17,9 +17,10 @@ class TestBloc extends Cubit<TestState> {
         ));
 
   final TestRepository _testRepository;
+  final String _languageCode;
 
   void loadQuestions() async {
-    final result = await _testRepository.loadQuestions();
+    final result = await _testRepository.loadQuestions(_languageCode);
     emit(state.copyWith(questions: result));
   }
 

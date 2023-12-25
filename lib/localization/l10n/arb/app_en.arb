@@ -1,0 +1,12 @@
+{
+  "projectName": "Pestov Test",
+  "startButtonText": "Start",
+  "correctAnswersText": "Correct Answers",
+  "incorrectAnswersText": "Incorrect Answers",
+  "startTestAgainButtonText": "Start Test Again",
+  "unsatisfactoryText": "Unsatisfactory",
+  "badText": "Bad",
+  "averageText": "Average",
+  "goodText": "Good",
+  "excellentText": "Excellent"
+}

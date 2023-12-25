@@ -1,18 +1,21 @@
+import 'package:flutter/cupertino.dart';
+import 'package:pestov_test/localization/localization.dart';
+
 import '../bloc/overview_result_bloc.dart';
 
 extension ResultEvaluationStatusExtension on ResultEvaluationStatus {
-  String get displayResult {
+  String displayResult(BuildContext context) {
     switch (this) {
       case ResultEvaluationStatus.unsatisfactory:
-        return "Незадовільно";
+        return context.l10n.unsatisfactoryText;
       case ResultEvaluationStatus.bad:
-        return "Погано";
+        return context.l10n.badText;
       case ResultEvaluationStatus.average:
-        return "Середнє";
+        return context.l10n.averageText;
       case ResultEvaluationStatus.good:
-        return "Добре";
+        return context.l10n.goodText;
       case ResultEvaluationStatus.excellent:
-        return "Відмінно";
+        return context.l10n.excellentText;
     }
   }
 }

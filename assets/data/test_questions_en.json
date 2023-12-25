@@ -1,0 +1,454 @@
+[
+  {
+    "question": "Smurdyk is afraid of both mice and cockroaches.",
+    "answer_position": 2,
+    "answers": [
+      {
+        "text": "Smurdyk is not afraid of cockroaches"
+      },
+      {
+        "text": "Smurdyk is afraid of mice"
+      },
+      {
+        "text": "Smurdyk is more afraid of mice than cockroaches, but he is also afraid of cockroaches"
+      }
+    ]
+  },
+  {
+    "question": "It is known that a rodent must be either striped, or horned, or both.",
+    "answer_position": 1,
+    "answers": [
+      {
+        "text": "A rodent cannot be hornless"
+      },
+      {
+        "text": "A rodent cannot be plain and hornless at the same time"
+      },
+      {
+        "text": "A rodent cannot be striped and hornless at the same time"
+      }
+    ]
+  },
+  {
+    "question": "If you poison the stopcock, it will immediately begin to emit bubbles.",
+    "answer_position": 0,
+    "answers": [
+      {
+        "text": "If the stopcock emits bubbles, it has been poisoned"
+      },
+      {
+        "text": "If the stop is not poisoned, it will not emit bubbles"
+      },
+      {
+        "text": "If the stopper does not emit bubbles, then it is not poisoned"
+      }
+    ]
+  },
+  {
+    "question": "All coolies know how to play checkers.",
+    "answer_position": 0,
+    "answers": [
+      {
+        "text": "There are no scumbags who can't play checkers"
+      },
+      {
+        "text": "Everyone who knows how to play checkers is a badass"
+      },
+      {
+        "text": "There are no chumps who know how to play checkers"
+      }
+    ]
+  },
+  {
+    "question": "Dubbers can be either good or bad. It's not true that this dubber is bad.",
+    "answer_position": 0,
+    "answers": [
+      {
+        "text": "Actually this dubber is good"
+      },
+      {
+        "text": "Actually, this dubber is average"
+      },
+      {
+        "text": "Actually this dubber is bad"
+      }
+    ]
+  },
+  {
+    "question": "More than a dozen tiales have been discovered in nature. All discovered tiales are solid red.",
+    "answer_position": 0,
+    "answers": [
+      {
+        "text": "At least some of the teals are red"
+      },
+      {
+        "text": "At least some of the teals are green"
+      },
+      {
+        "text": "Some tials (from those already detected) may not be red"
+      }
+    ]
+  },
+  {
+    "question": "There are jackals with muhropendia disease.",
+    "answer_position": 2,
+    "answers": [
+      {
+        "text": "Not every jackal can be proud of a healthy muhropendia"
+      },
+      {
+        "text": "Not every jackal can be proud of a sick muhropendia"
+      },
+      {
+        "text": "There are jackals with healthy muhropendia"
+      }
+    ]
+  },
+  {
+    "question": "It is not true that our rookery is big and round.",
+    "answer_position": 1,
+    "answers": [
+      {
+        "text": "Our rookery is small and not round"
+      },
+      {
+        "text": "Our tumbler is small, or not round, or both"
+      },
+      {
+        "text": "Our tumbler is small, or not round, but not both at the same time"
+      }
+    ]
+  },
+  {
+    "question": "John is always either growling or purring.",
+    "answer_position": 1,
+    "answers": [
+      {
+        "text": "John sometimes grunts"
+      },
+      {
+        "text": "John sometimes growls and sometimes purrs"
+      },
+      {
+        "text": "John never purrs and purrs at the same time"
+      }
+    ]
+  },
+  {
+    "question": "Journalists said that the swamp bzdysh is illiterate and insolent.",
+    "answer_position": 2,
+    "answers": [
+      {
+        "text": "Actually, the swamp bzdish is educated and tactical"
+      },
+      {
+        "text": "Actually, the swamp brat is illiterate, but not arrogant"
+      },
+      {
+        "text": "These journalists lied"
+      }
+    ]
+  },
+  {
+    "question": "If you shake the bottle, the shooting will start. The bottle was shaken.",
+    "answer_position": 0,
+    "answers": [
+      {
+        "text": "Shooting has already started"
+      },
+      {
+        "text": "Shooting will start sometime"
+      },
+      {
+        "text": "Shooting will start sometime or has already started"
+      }
+    ]
+  },
+  {
+    "question": "If you shake the shutter, the shooting will start immediately. There has been no shooting in the last hour.",
+    "answer_position": 1,
+    "answers": [
+      {
+        "text": "During the last hour, the butterfly was not shaken"
+      },
+      {
+        "text": "During the last hour, the butterfly was shaken"
+      },
+      {
+        "text": "And what was the point of shaking with anything"
+      }
+    ]
+  },
+  {
+    "question": "The big housekeeper scared the village headman.",
+    "answer_position": 2,
+    "answers": [
+      {
+        "text": "Old age had a nightmare"
+      },
+      {
+        "text": "The mayor tried some low-quality drink"
+      },
+      {
+        "text": "The mayor was scared"
+      }
+    ]
+  },
+  {
+    "question": "If you scratch the lip behind the ear, it will start to hiss quite a bit. If the lips hiss enough, the milk nearby will turn sour.",
+    "answer_position": 0,
+    "answers": [
+      {
+        "text": "If you don't scratch your lip behind your ear, the milk nearby won't go sour"
+      },
+      {
+        "text": "If you scratch the sponge behind the ear, the nearby milk will turn sour"
+      },
+      {
+        "text": "Milk will never turn sour from scratching your lips"
+      }
+    ]
+  },
+  {
+    "question": "Everyone who is loudly indignant is sure to be eaten. All smiles are constantly loudly indignant.",
+    "answer_position": 1,
+    "answers": [
+      {
+        "text": "Everyone who is loudly indignant - smiles"
+      },
+      {
+        "text": "All smiles must be eaten"
+      },
+      {
+        "text": "Some smiles don't get eaten"
+      }
+    ]
+  },
+  {
+    "question": "Both walleye and pike live in the rivers near Timugrad.",
+    "answer_position": 0,
+    "answers": [
+      {
+        "text": "There is no obla in the rivers near Tymugrad"
+      },
+      {
+        "text": "There is a pike living in the rivers near Tymugrad"
+      },
+      {
+        "text": "Only walleye and pike live in the rivers near Tymugrad"
+      }
+    ]
+  },
+  {
+    "question": "All puffballs rejoice in intelligence or beauty, and sometimes even both.",
+    "answer_position": 1,
+    "answers": [
+      {
+        "text": "A puffball can't be stupid"
+      },
+      {
+        "text": "There are no silly ugly puffballs"
+      },
+      {
+        "text": "There are no intelligent beautiful puffballs"
+      }
+    ]
+  },
+  {
+    "question": "When you sleep, you always fart.",
+    "answer_position": 0,
+    "answers": [
+      {
+        "text": "If you are farting, then you are sleeping"
+      },
+      {
+        "text": "If you don't sleep, you don't sleep"
+      },
+      {
+        "text": "If you don't fart, you don't sleep"
+      }
+    ]
+  },
+  {
+    "question": "All fans love the game.",
+    "answer_position": 0,
+    "answers": [
+      {
+        "text": "There are no fans who don't love the game"
+      },
+      {
+        "text": "Everybody who likes cheerleaders is rooting for someone"
+      },
+      {
+        "text": "There are no fans who love the jarl"
+      }
+    ]
+  },
+  {
+    "question": "There are only two types of zduns: red and blue. As for this particular zdunz, it turned out not to be blue at all.",
+    "answer_position": 2,
+    "answers": [
+      {
+        "text": "This bug is blue"
+      },
+      {
+        "text": "This puffy blue-red"
+      },
+      {
+        "text": "This bug is red"
+      }
+    ]
+  },
+  {
+    "question": "Many remains of bidlosaurs have been found. But they are very poorly preserved.",
+    "answer_position": 0,
+    "answers": [
+      {
+        "text": "Some remains of bidlosaurs are very poorly preserved"
+      },
+      {
+        "text": "At least some remains of bidlosaurs are in excellent condition"
+      },
+      {
+        "text": "Some of the found remains of bidlosaurs are well preserved"
+      }
+    ]
+  },
+  {
+    "question": "Some lapuchondria are not stable.",
+    "answer_position": 2,
+    "answers": [
+      {
+        "text": "Not every lapuchondria is unstable"
+      },
+      {
+        "text": "There are stable lapuchondria"
+      },
+      {
+        "text": "Not every lapuchondria is stable"
+      }
+    ]
+  },
+  {
+    "question": "They said that dukni are both sharp and hard. It turns out that this is not true at all.",
+    "answer_position": 1,
+    "answers": [
+      {
+        "text": "Dukni are actually dumb and soft"
+      },
+      {
+        "text": "Actually, dukni are dull or soft or both"
+      },
+      {
+        "text": "Dukni are actually dull or soft, but not both at the same time"
+      }
+    ]
+  },
+  {
+    "question": "The tile is always either running or breathing.",
+    "answer_position": 0,
+    "answers": [
+      {
+        "text": "The tile breathes on the run"
+      },
+      {
+        "text": "The tile does not breathe while standing"
+      },
+      {
+        "text": "The tile does not breathe while running"
+      }
+    ]
+  },
+  {
+    "question": "The information that tomorrow's meeting will be devoted to ducks turned out to be false.",
+    "answer_position": 1,
+    "answers": [
+      {
+        "text": "The information was found to be incorrect"
+      },
+      {
+        "text": "The meeting will not be about ducklings"
+      },
+      {
+        "text": "The meeting will be devoted to ducks, but not to ducks at all"
+      }
+    ]
+  },
+  {
+    "question": "If you pour water on a narrow one, it will spoil immediately. This narrow one is not spoiled. Now I will pour water on it.",
+    "answer_position": 2,
+    "answers": [
+      {
+        "text": "You should not offend the narrow"
+      },
+      {
+        "text": "Narrow will spoil"
+      },
+      {
+        "text": "Narrow will not spoil"
+      }
+    ]
+  },
+  {
+    "question": "If you pour water on a narrow one, it will spoil immediately. This narrow one was not spoiled.",
+    "answer_position": 0,
+    "answers": [
+      {
+        "text": "Narrows were not poured"
+      },
+      {
+        "text": "Narrowly poured"
+      },
+      {
+        "text": "So you stay away from the narrow"
+      }
+    ]
+  },
+  {
+    "question": "Vasya gave up on this test after answering only 28 questions.",
+    "answer_position": 2,
+    "answers": [
+      {
+        "text": "Vasya got tired while taking the test"
+      },
+      {
+        "text": "Vasya hesitated while passing the test"
+      },
+      {
+        "text": "Vasya did not finish the test"
+      }
+    ]
+  },
+  {
+    "question": "If you feed a cow, it will calm down. A calm cow can be milked.",
+    "answer_position": 2,
+    "answers": [
+      {
+        "text": "If the cow is not fed, it cannot be milked"
+      },
+      {
+        "text": "Bushka can be milked, but not fed, she will find something and eat it herself"
+      },
+      {
+        "text": "After feeding, the bush can be milked"
+      }
+    ]
+  },
+  {
+    "question": "If you please the cow, she will give milk. The cow will be happy if you pull her tail.",
+    "answer_position": 2,
+    "answers": [
+      {
+        "text": "If you pull the cow by the tail, it will give milk"
+      },
+      {
+        "text": "No one will be happy if you pull his tail"
+      },
+      {
+        "text": "If you don't pull the cow's tail, she won't give milk"
+      }
+    ]
+  }
+]
+
+
