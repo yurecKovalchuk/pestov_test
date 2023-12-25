@@ -1,11 +1,11 @@
 part of 'overview_result_bloc.dart';
 
 enum ResultEvaluationStatus {
+  unsatisfactory(30.0),
   bad(50.0),
-  average(70.0),
-  excellent(80.0),
+  average(65.0),
   good(90.0),
-  unsatisfactory(100.0);
+  excellent(100.0);
 
   final double countAnswers;
 

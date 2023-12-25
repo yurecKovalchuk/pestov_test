@@ -1,5 +1,5 @@
-import 'package:pestov_test/data/data.dart';
+import '../model/test_question_model.dart';
 
 abstract class TestRepository {
-  Future<List<TestQuestionDTO>> loadQuestions();
+  Future<List<TestQuestionModel>> loadQuestions();
 }

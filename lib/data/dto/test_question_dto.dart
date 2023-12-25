@@ -1,22 +1,16 @@
-class TestQuestionDTO {
-  final int id;
-  final String question;
-  final int? correctAnswerPosition;
-  final List<Map<String, dynamic>> answers;
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  TestQuestionDTO({
-    required this.id,
-    required this.question,
-    required this.correctAnswerPosition,
-    required this.answers,
-  });
+part 'test_question_dto.freezed.dart';
 
-  factory TestQuestionDTO.fromJson(Map<String, dynamic> json) {
-    return TestQuestionDTO(
-      id: json['id'],
-      question: json['question'],
-      correctAnswerPosition: json['correctAnswerPosition'],
-      answers: List<Map<String, dynamic>>.from(json['answers']),
-    );
-  }
+part 'test_question_dto.g.dart';
+
+@freezed
+class TestQuestionDTO with _$TestQuestionDTO {
+  const factory TestQuestionDTO({
+    required String question,
+    @JsonKey(name: 'answer_position') required int? answerPosition,
+    required List<Map<String, dynamic>> answers,
+  }) = _TestQuestionDTO;
+
+  factory TestQuestionDTO.fromJson(Map<String, dynamic> json) => _$TestQuestionDTOFromJson(json);
 }
