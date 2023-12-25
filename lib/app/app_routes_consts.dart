@@ -17,4 +17,8 @@ abstract class AppRoutInfo {
     name: 'test_screen',
     path: '/test',
   );
+  static const overviewResultScreen = RouteData(
+    name: 'overview_result_screen',
+    path: '/overview_result',
+  );
 }
