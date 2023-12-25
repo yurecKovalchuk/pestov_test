@@ -6,5 +6,7 @@ class TestState with _$TestState {
     List<TestQuestionDTO>? questions,
     List<TestAnswerModel>? answers,
     required int currentQuestionIndex,
+    int? correctAnswersCount,
+    required bool isEndTest,
   }) = _TestState;
 }
