@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'package:get_it/get_it.dart';
 
@@ -8,6 +9,7 @@ import 'package:go_router/go_router.dart';
 
 import 'package:pestov_test/domain/domain.dart';
 import 'package:pestov_test/features/features.dart';
+import 'package:pestov_test/localization/localization.dart';
 import 'app.dart';
 
 class ApplicationWidget extends StatelessWidget {
@@ -24,6 +26,16 @@ class ApplicationWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       routerConfig: _router,
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: const [
+        Locale('en', ''),
+        Locale('uk', ''),
+      ],
       theme: ThemeData.dark(),
     );
   }
@@ -46,7 +58,8 @@ class ApplicationWidget extends StatelessWidget {
           builder: (context, state) {
             return BlocProvider<TestBloc>(
               create: (BuildContext context) => TestBloc(
-                  serviceLocator<TestRepository>(),
+                serviceLocator<TestRepository>(),
+               state.uri.queryParameters["locale"]!,
               ),
               child: const TestScreen(),
             );

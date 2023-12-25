@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:go_router/go_router.dart';
+import 'package:pestov_test/localization/localization.dart';
 import 'package:pie_chart/pie_chart.dart';
 
 import 'package:pestov_test/app/app.dart';
@@ -25,7 +26,7 @@ class OverviewResultScreen extends StatelessWidget {
               children: [
                 Center(
                   child: Text(
-                    state.status.displayResult,
+                    state.status.displayResult(context),
                     style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                           fontWeight: FontWeight.w600,
                         ),
@@ -39,8 +40,8 @@ class OverviewResultScreen extends StatelessWidget {
                   width: 400,
                   child: PieChart(
                     dataMap: {
-                      'Правильні відповіді': state.correctAnswers,
-                      'Неправильні відповіді': (100 - state.correctAnswers),
+                      context.l10n.correctAnswersText: state.correctAnswers,
+                      context.l10n.incorrectAnswersText: (100 - state.correctAnswers),
                     },
                     colorList: const [Colors.green, Colors.red],
                     chartRadius: MediaQuery.of(context).size.width / 2,
@@ -58,11 +59,13 @@ class OverviewResultScreen extends StatelessWidget {
                   height: 52,
                 ),
                 ElevatedButton(
-                  onPressed: () => context.goNamed(AppRoutInfo.testScreen.name),
+                  onPressed: () => context.goNamed(AppRoutInfo.testScreen.name, queryParameters: {
+                    "locale": Localizations.localeOf(context).languageCode,
+                  }),
                   style: ElevatedButton.styleFrom(
                     minimumSize: const Size.fromHeight(62.0),
                   ),
-                  child: const Text('Почати тест знову'),
+                  child: Text(context.l10n.startTestAgainButtonText),
                 ),
               ],
             ),

@@ -1,0 +1,12 @@
+{
+  "projectName": "Тест Пестова",
+  "startButtonText": "Старт",
+  "correctAnswersText": "Правильні відповіді",
+  "incorrectAnswersText": "Неправильні відповіді",
+  "startTestAgainButtonText": "Почати тест знову",
+  "unsatisfactoryText": "Незадовільно",
+  "badText": "Погано",
+  "averageText": "Середнє",
+  "goodText": "Добре",
+  "excellentText": "Відмінно"
+}
