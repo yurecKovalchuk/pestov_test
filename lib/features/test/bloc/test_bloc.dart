@@ -2,6 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:pestov_test/data/data.dart';
+import 'package:pestov_test/domain/domain.dart';
 
 import 'package:pestov_test/models/models.dart';
 

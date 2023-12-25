@@ -1,18 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get_it/get_it.dart';
 
 import 'package:go_router/go_router.dart';
 
 import 'package:pestov_test/data/data.dart';
+import 'package:pestov_test/domain/domain.dart';
 import 'package:pestov_test/features/features.dart';
 import 'app.dart';
 
 class ApplicationWidget extends StatelessWidget {
-  ApplicationWidget({super.key});
+  ApplicationWidget({
+    super.key,
+    required this.serviceLocator,
+  });
+
+  final GetIt serviceLocator;
 
   late final GoRouter _router = _buildRouting();
 
-  final TestRepository _testRepository = TestRepository(AssetsDataSource());
+  //final TestRepositoryImpl _testRepository = TestRepositoryImpl(AssetsDataSource());
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +47,7 @@ class ApplicationWidget extends StatelessWidget {
           builder: (context, state) {
             return BlocProvider<TestBloc>(
               create: (BuildContext context) => TestBloc(
-                _testRepository,
+                  serviceLocator<TestRepository>(),
               ),
               child: const TestScreen(),
             );
