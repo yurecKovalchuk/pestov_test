@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1041752353431",
+    "project_id": "pestovtest",
+    "storage_bucket": "pestovtest.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1041752353431:android:44de85853bd59872f817d2",
+        "android_client_info": {
+          "package_name": "om.example.pestov_test"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDc7eO8cc4nzqZJUf9YH9H_hBh9KYuMUjM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

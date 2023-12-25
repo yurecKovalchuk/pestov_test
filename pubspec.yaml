@@ -24,8 +24,10 @@ dependencies:
   pie_chart: ^5.4.0
   get_it: ^7.6.4
   injectable: ^2.3.0
-
   cupertino_icons: ^1.0.2
+  firebase_core: ^2.24.2
+  firebase_crashlytics: ^3.4.8
+  firebase_analytics: ^10.7.4
 
 dev_dependencies:
   flutter_test:
