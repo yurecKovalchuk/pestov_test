@@ -9,20 +9,13 @@ import 'package:pestov_test/app/app.dart';
 import '../bloc/overview_result_bloc.dart';
 import '../extensions/extensions.dart';
 
-class OverviewResultScreen extends StatefulWidget {
+class OverviewResultScreen extends StatelessWidget {
   const OverviewResultScreen({super.key});
-
-  @override
-  State<OverviewResultScreen> createState() => _OverviewResultScreenState();
-}
-
-class _OverviewResultScreenState extends State<OverviewResultScreen> {
-  OverviewResultBloc get _bloc => BlocProvider.of<OverviewResultBloc>(context);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: BlocConsumer<OverviewResultBloc, OverviewResultState>(
+      body: BlocBuilder<OverviewResultBloc, OverviewResultState>(
         builder: (context, state) {
           return Padding(
             padding: const EdgeInsets.all(24.0),
@@ -42,12 +35,12 @@ class _OverviewResultScreenState extends State<OverviewResultScreen> {
                   height: 36,
                 ),
                 SizedBox(
-                  height: 450,
-                  width: 450,
+                  height: 400,
+                  width: 400,
                   child: PieChart(
                     dataMap: {
-                      'Правильні відповіді': state.correctAnswers!,
-                      'Неправильні відповіді': (100 - state.correctAnswers!),
+                      'Правильні відповіді': state.correctAnswers,
+                      'Неправильні відповіді': (100 - state.correctAnswers),
                     },
                     colorList: const [Colors.green, Colors.red],
                     chartRadius: MediaQuery.of(context).size.width / 2,
@@ -75,7 +68,6 @@ class _OverviewResultScreenState extends State<OverviewResultScreen> {
             ),
           );
         },
-        listener: (context, state) {},
       ),
     );
   }

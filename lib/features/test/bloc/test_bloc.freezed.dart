@@ -16,10 +16,8 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$TestState {
-  List<TestQuestionDTO>? get questions => throw _privateConstructorUsedError;
-  List<TestAnswerModel>? get answers => throw _privateConstructorUsedError;
+  List<TestQuestionModel> get questions => throw _privateConstructorUsedError;
   int get currentQuestionIndex => throw _privateConstructorUsedError;
-  int? get correctAnswersCount => throw _privateConstructorUsedError;
   bool get isEndTest => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -33,10 +31,8 @@ abstract class $TestStateCopyWith<$Res> {
       _$TestStateCopyWithImpl<$Res, TestState>;
   @useResult
   $Res call(
-      {List<TestQuestionDTO>? questions,
-      List<TestAnswerModel>? answers,
+      {List<TestQuestionModel> questions,
       int currentQuestionIndex,
-      int? correctAnswersCount,
       bool isEndTest});
 }
 
@@ -53,29 +49,19 @@ class _$TestStateCopyWithImpl<$Res, $Val extends TestState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? questions = freezed,
-    Object? answers = freezed,
+    Object? questions = null,
     Object? currentQuestionIndex = null,
-    Object? correctAnswersCount = freezed,
     Object? isEndTest = null,
   }) {
     return _then(_value.copyWith(
-      questions: freezed == questions
+      questions: null == questions
           ? _value.questions
           : questions // ignore: cast_nullable_to_non_nullable
-              as List<TestQuestionDTO>?,
-      answers: freezed == answers
-          ? _value.answers
-          : answers // ignore: cast_nullable_to_non_nullable
-              as List<TestAnswerModel>?,
+              as List<TestQuestionModel>,
       currentQuestionIndex: null == currentQuestionIndex
           ? _value.currentQuestionIndex
           : currentQuestionIndex // ignore: cast_nullable_to_non_nullable
               as int,
-      correctAnswersCount: freezed == correctAnswersCount
-          ? _value.correctAnswersCount
-          : correctAnswersCount // ignore: cast_nullable_to_non_nullable
-              as int?,
       isEndTest: null == isEndTest
           ? _value.isEndTest
           : isEndTest // ignore: cast_nullable_to_non_nullable
@@ -93,10 +79,8 @@ abstract class _$$TestStateImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {List<TestQuestionDTO>? questions,
-      List<TestAnswerModel>? answers,
+      {List<TestQuestionModel> questions,
       int currentQuestionIndex,
-      int? correctAnswersCount,
       bool isEndTest});
 }
 
@@ -111,29 +95,19 @@ class __$$TestStateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? questions = freezed,
-    Object? answers = freezed,
+    Object? questions = null,
     Object? currentQuestionIndex = null,
-    Object? correctAnswersCount = freezed,
     Object? isEndTest = null,
   }) {
     return _then(_$TestStateImpl(
-      questions: freezed == questions
+      questions: null == questions
           ? _value._questions
           : questions // ignore: cast_nullable_to_non_nullable
-              as List<TestQuestionDTO>?,
-      answers: freezed == answers
-          ? _value._answers
-          : answers // ignore: cast_nullable_to_non_nullable
-              as List<TestAnswerModel>?,
+              as List<TestQuestionModel>,
       currentQuestionIndex: null == currentQuestionIndex
           ? _value.currentQuestionIndex
           : currentQuestionIndex // ignore: cast_nullable_to_non_nullable
               as int,
-      correctAnswersCount: freezed == correctAnswersCount
-          ? _value.correctAnswersCount
-          : correctAnswersCount // ignore: cast_nullable_to_non_nullable
-              as int?,
       isEndTest: null == isEndTest
           ? _value.isEndTest
           : isEndTest // ignore: cast_nullable_to_non_nullable
@@ -144,46 +118,30 @@ class __$$TestStateImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$TestStateImpl implements _TestState {
+class _$TestStateImpl extends _TestState {
   const _$TestStateImpl(
-      {final List<TestQuestionDTO>? questions,
-      final List<TestAnswerModel>? answers,
+      {required final List<TestQuestionModel> questions,
       required this.currentQuestionIndex,
-      this.correctAnswersCount,
       required this.isEndTest})
       : _questions = questions,
-        _answers = answers;
+        super._();
 
-  final List<TestQuestionDTO>? _questions;
+  final List<TestQuestionModel> _questions;
   @override
-  List<TestQuestionDTO>? get questions {
-    final value = _questions;
-    if (value == null) return null;
+  List<TestQuestionModel> get questions {
     if (_questions is EqualUnmodifiableListView) return _questions;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  final List<TestAnswerModel>? _answers;
-  @override
-  List<TestAnswerModel>? get answers {
-    final value = _answers;
-    if (value == null) return null;
-    if (_answers is EqualUnmodifiableListView) return _answers;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_questions);
   }
 
   @override
   final int currentQuestionIndex;
   @override
-  final int? correctAnswersCount;
-  @override
   final bool isEndTest;
 
   @override
   String toString() {
-    return 'TestState(questions: $questions, answers: $answers, currentQuestionIndex: $currentQuestionIndex, correctAnswersCount: $correctAnswersCount, isEndTest: $isEndTest)';
+    return 'TestState(questions: $questions, currentQuestionIndex: $currentQuestionIndex, isEndTest: $isEndTest)';
   }
 
   @override
@@ -193,11 +151,8 @@ class _$TestStateImpl implements _TestState {
             other is _$TestStateImpl &&
             const DeepCollectionEquality()
                 .equals(other._questions, _questions) &&
-            const DeepCollectionEquality().equals(other._answers, _answers) &&
             (identical(other.currentQuestionIndex, currentQuestionIndex) ||
                 other.currentQuestionIndex == currentQuestionIndex) &&
-            (identical(other.correctAnswersCount, correctAnswersCount) ||
-                other.correctAnswersCount == correctAnswersCount) &&
             (identical(other.isEndTest, isEndTest) ||
                 other.isEndTest == isEndTest));
   }
@@ -206,9 +161,7 @@ class _$TestStateImpl implements _TestState {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(_questions),
-      const DeepCollectionEquality().hash(_answers),
       currentQuestionIndex,
-      correctAnswersCount,
       isEndTest);
 
   @JsonKey(ignore: true)
@@ -218,22 +171,17 @@ class _$TestStateImpl implements _TestState {
       __$$TestStateImplCopyWithImpl<_$TestStateImpl>(this, _$identity);
 }
 
-abstract class _TestState implements TestState {
+abstract class _TestState extends TestState {
   const factory _TestState(
-      {final List<TestQuestionDTO>? questions,
-      final List<TestAnswerModel>? answers,
+      {required final List<TestQuestionModel> questions,
       required final int currentQuestionIndex,
-      final int? correctAnswersCount,
       required final bool isEndTest}) = _$TestStateImpl;
+  const _TestState._() : super._();
 
   @override
-  List<TestQuestionDTO>? get questions;
-  @override
-  List<TestAnswerModel>? get answers;
+  List<TestQuestionModel> get questions;
   @override
   int get currentQuestionIndex;
-  @override
-  int? get correctAnswersCount;
   @override
   bool get isEndTest;
   @override

@@ -28,7 +28,7 @@ class _TestScreenState extends State<TestScreen> {
     return Scaffold(
       body: BlocConsumer<TestBloc, TestState>(
         builder: (context, state) {
-          return state.questions == null
+          return state.questions.isEmpty
               ? const Center(child: CircularProgressIndicator())
               : Padding(
                   padding: const EdgeInsets.all(36.0),
@@ -37,7 +37,7 @@ class _TestScreenState extends State<TestScreen> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(
-                        state.questions![state.currentQuestionIndex].question,
+                        state.questions[state.currentQuestionIndex].question,
                         style: Theme.of(context).textTheme.titleMedium?.copyWith(
                               fontWeight: FontWeight.w600,
                             ),
@@ -48,25 +48,32 @@ class _TestScreenState extends State<TestScreen> {
                       ),
                       ListView.builder(
                         shrinkWrap: true,
-                        itemCount: state.questions![state.currentQuestionIndex].answers.length,
+                        itemCount: state.questions[state.currentQuestionIndex].answers.length,
                         itemBuilder: (context, index) {
-                          final answerIndex = index + 1;
+                          // final answerIndex = index + 1;
                           return Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: ElevatedButton(
-                              onPressed: () => _bloc.selectAnswer(answerIndex),
+                              onPressed: () => _bloc.selectAnswer(index),
                               style: ElevatedButton.styleFrom(
                                 minimumSize: const Size.fromHeight(62.0),
                               ),
-                              child: Flexible(
-                                child: Text(
-                                  state.questions![state.currentQuestionIndex].answers[index]['text'],
-                                  style: const TextStyle(
-                                    fontSize: 16.0,
-                                    color: Colors.white,
-                                  ), textAlign: TextAlign.center,
-                                  softWrap: true,
-                                ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Flexible(
+                                    child: Text(
+                                      state.questions[state.currentQuestionIndex].answers[index],
+                                      style: const TextStyle(
+                                        fontSize: 12.0,
+                                        color: Colors.white,
+                                      ),
+                                      textAlign: TextAlign.center,
+                                      softWrap: true,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
                           );
@@ -75,27 +82,25 @@ class _TestScreenState extends State<TestScreen> {
                       const SizedBox(
                         height: 80,
                       ),
-                      Text('${(state.currentQuestionIndex + 1).toString()}/${state.questions!.length}'),
+                      Text('${(state.currentQuestionIndex + 1).toString()}/${state.questions.length}'),
                     ],
                   ),
                 );
         },
-        listener: (context, state) {
-          if (state.isEndTest == true) {
-            _pushToOverviewResultScreen(state.correctAnswersCount!, state.questions!.length);
-          }
-        },
+        listener: _stateListener,
       ),
     );
   }
 
-  void _pushToOverviewResultScreen(int correctAnswers, int numberOfQuestions) {
-    GoRouter.of(context).goNamed(
-      AppRoutInfo.overviewResultScreen.name,
-      queryParameters: {
-        "correctAnswers": correctAnswers.toString(),
-        "numberOfQuestions": numberOfQuestions.toString(),
-      },
-    );
+  void _stateListener(BuildContext context, TestState state) {
+    if (state.isEndTest == true) {
+      GoRouter.of(context).goNamed(
+        AppRoutInfo.overviewResultScreen.name,
+        queryParameters: {
+          "correctAnswers": state.getCountCorrectAnswers.toString(),
+          "numberOfQuestions": state.questions.length.toString(),
+        },
+      );
+    }
   }
 }

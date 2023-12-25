@@ -2,11 +2,13 @@ part of 'test_bloc.dart';
 
 @freezed
 class TestState with _$TestState {
+  const TestState._();
+
   const factory TestState({
-    List<TestQuestionDTO>? questions,
-    List<TestAnswerModel>? answers,
+    required List<TestQuestionModel> questions,
     required int currentQuestionIndex,
-    int? correctAnswersCount,
     required bool isEndTest,
   }) = _TestState;
+
+  int get getCountCorrectAnswers => questions.where((element) => element.isAnswered == true).length;
 }
