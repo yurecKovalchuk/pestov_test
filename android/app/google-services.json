@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1041752353431:android:44de85853bd59872f817d2",
+        "mobilesdk_app_id": "1:1041752353431:android:e658816e44637c6df817d2",
         "android_client_info": {
-          "package_name": "om.example.pestov_test"
+          "package_name": "com.example.pestov_test"
         }
       },
       "oauth_client": [],
