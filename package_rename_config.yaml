@@ -1,0 +1,9 @@
+package_rename_config:
+  android:
+    app_name: Pestov test
+    package_name: com.webtrit.disputesolver
+    override_old_package: com.example
+    lang: kotlin
+  ios:
+    app_name: Pestov test
+    package_name: com.webtrit.disputesolver

@@ -1,4 +1,4 @@
-package com.example.pestov_test
+package com.webtrit.disputesolver.pestov_test
 
 import io.flutter.embedding.android.FlutterActivity
 
